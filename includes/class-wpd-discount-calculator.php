@@ -43,6 +43,7 @@ class WPD_Discount_Calculator
 
         foreach ($cart->get_cart() as $cart_item_key => $cart_item) {
             $product = $cart_item['data'];
+            $this->debug_messages[] = 'Cart item variation data: ' . print_r($cart_item['variation'], true);
             $original_price = $product->get_price();
             $this->debug_messages[] = '-----------------------------------';
             $this->debug_messages[] = 'Processing product: ' . $product->get_name() . ' (ID: ' . $product->get_id() . ')';
